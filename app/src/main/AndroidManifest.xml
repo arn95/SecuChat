@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.secuchat" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name=".SecuChatApp"
+        android:allowBackup="true"
+        android:icon="@drawable/secuchat_logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        tools:replace="icon,label" >
+        <receiver android:name=".Receivers.BootCompletedReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".SetupActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ChatActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+        </activity>
+
+        <meta-data
+            android:name="DATABASE"
+            android:value="secuchat.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="3" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.secuchat" />
+
+        <activity
+            android:name=".MyChatRooms"
+            android:label="@string/title_activity_my_chat_rooms"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".Invites"
+            android:label="@string/title_activity_invites" >
+        </activity>
+
+        <service android:name=".Services.SecuChatNotificationService" >
+        </service>
+
+        <activity
+            android:name=".ChatroomCreatorActivity"
+            android:label="@string/title_activity_chatroom_creator" >
+        </activity>
+        <activity
+            android:name=".ContactsActivity"
+            android:label="@string/title_activity_contacts" >
+        </activity>
+    </application>
+
+</manifest>

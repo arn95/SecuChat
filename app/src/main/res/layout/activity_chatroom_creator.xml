@@ -1,0 +1,131 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context="com.secuchat.ChatroomCreatorActivity">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:id="@+id/toolbarChatroomCreator"
+        android:background="@color/GhostWhite"
+        android:elevation="6dp"
+        android:layout_alignParentTop="true"></Toolbar>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chatroom_name"
+        android:hint="chatroom name"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/toolbarChatroomCreator"
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_marginLeft="20dp" />
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:id="@+id/imageView"
+        android:background="@drawable/ic_chat_black_36dp"
+        android:layout_alignBottom="@+id/chatroom_name"
+        android:layout_alignStart="@+id/toolbarChatroomCreator"
+        android:layout_marginLeft="20dp" />
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:id="@+id/imageView2"
+        android:layout_below="@+id/chatroom_name"
+        android:layout_alignStart="@+id/imageView"
+        android:background="@drawable/ic_access_alarm_black_36dp"
+        android:layout_marginTop="20dp" />
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:id="@+id/imageView3"
+        android:background="@drawable/ic_person_add_black_36dp"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignStart="@+id/imageView2"
+        android:layout_marginTop="25dp" />
+
+    <Button
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:id="@+id/add_participants_btn"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:contentDescription="Add a new participants field"
+        android:background="@drawable/add_button_shape"
+        android:text="+"
+        android:textColor="@color/GhostWhite"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:elegantTextHeight="false"
+        android:layout_alignTop="@+id/imageView3"
+        android:layout_alignEnd="@+id/create_chatroom_btn" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Self-Destruct in 3 days"
+        android:id="@+id/textView2"
+        android:layout_alignTop="@+id/self_destruct_switch"
+        android:layout_alignStart="@+id/chatroom_name"
+        android:layout_marginTop="3dp"
+        android:textStyle="normal"
+        android:textSize="15sp" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/self_destruct_switch"
+        android:checked="false"
+        android:layout_above="@+id/imageView3"
+        android:layout_toStartOf="@+id/add_participants_btn" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Done"
+        android:id="@+id/create_chatroom_btn"
+        android:background="@drawable/create_room_button_shape"
+        android:textColor="@color/GhostWhite"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:isScrollContainer="false"
+        android:layout_below="@+id/self_destruct_switch"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_marginTop="20dp"
+        android:layout_above="@+id/create_chatroom_btn"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:id="@+id/participant_edittext_linear_layout"
+            android:layout_marginBottom="20dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/participant_list_item_name"
+                android:hint="participant name"
+                android:layout_marginBottom="5dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="0dp" tools:context=".Setup"
+    android:background="@color/IndianRed"
+    android:animateLayoutChanges="true"
+    android:focusable="true">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Enter Nickname"
+        android:id="@+id/nicknameText"
+        android:textSize="30dp"
+        android:layout_above="@+id/nicknameField"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textColor="@color/FloralWhite"
+        android:visibility="invisible" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nicknameField"
+        android:hint="Billy Bob"
+        android:textColor="@color/FloralWhite"
+        android:textColorHint="@color/DarkGray"
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:inputType="textCapWords"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/nicknameText"
+        android:layout_alignEnd="@+id/nicknameText"
+        android:visibility="invisible" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:visibility="visible"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Generating Key..."
+        android:id="@+id/generatingText"
+        android:visibility="visible"
+        android:textColor="#ffffffff"
+        android:textSize="18sp"
+        android:layout_below="@+id/progressBar"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnContinue"
+        android:clickable="false"
+        android:textSize="15sp"
+        android:textColor="#ffffffff"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        android:background="@android:color/transparent"
+        android:text="Continue"
+        android:layout_below="@+id/nicknameField"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

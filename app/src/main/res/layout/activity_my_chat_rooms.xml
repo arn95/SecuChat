@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:id="@+id/toolbarChatRooms"
+        android:background="@color/GhostWhite"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:elevation="6dp">
+    </Toolbar>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_below="@+id/myChatRoomsList"
+        android:weightSum="1"
+        android:background="@android:color/transparent"
+        android:layout_alignParentTop="false">
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/myChatRoomsList"
+        android:layout_gravity="center_horizontal|top"
+        android:divider="@null"
+        android:layout_below="@+id/toolbarChatRooms"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New Chat"
+        android:id="@+id/btnInvite"
+        android:background="@drawable/create_room_button_shape"
+        android:textColor="@color/GhostWhite"
+        android:textAppearance="@android:style/TextAppearance.Material.Button"
+        android:elevation="20dp"
+        android:typeface="normal"
+        android:layout_gravity="top|center"
+        android:layout_alignBottom="@+id/myChatRoomsList"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="13dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+</RelativeLayout>
