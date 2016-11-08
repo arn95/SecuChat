@@ -1,3 +1,5 @@
+# Deprecated
+
 # SecuChat
 End to end encrypted messaging platform using Firebase.
 
